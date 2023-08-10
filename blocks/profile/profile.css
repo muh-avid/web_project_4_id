@@ -1,0 +1,26 @@
+.profile {
+    width: 880px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'avatar info button';
+    margin: 20px auto 50px;
+    column-gap: 25px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .profile {
+        width: 320px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 15px auto 0;
+        
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    .profile{
+        width: 768px;
+        grid-template-columns: auto 380px auto;
+    }
+}

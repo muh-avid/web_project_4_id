@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Di Sekitar A.S</title>
+    <link href="./pages/index.css" rel="stylesheet">
+</head>
+<body class="page">
+    <div>
+        <header class="header">
+            <img 
+            class="header__logo"
+            src="./Images/AroundTheUS.png"
+            alt="logo Around The U.S">
+
+            <img
+            class="header__line"
+            src="./Images/Line.png"
+            alt="line in headers">
+        </header>
+
+        <main class="content">
+            <section class="profile">
+                <img
+                class="profile__avatar"
+                src="./Images/imageProfile.jpg"
+                alt="image profile">
+                <div class="profile__info">
+                    <div class="profile__info-container">
+                        <h1 class="profile__info-heading">Jacques Cousteau</h1>
+                        <button type="button" class="profile__info-button"><!--in css--></button>
+                    </div>
+                    <p class="profile__info-subtitle">Penjelajah</p>
+                </div>
+                <div class="profile__add">
+                    <button type="button" class="profile__add-button">
+                        <!--in css-->
+                    </button>
+                </div>
+                
+            </section>
+
+            <section class="elements">
+                <div class="element">
+                    <img 
+                    class="element__image"
+                    src="./elements/kirill-pershin-1088404-unsplash.png"
+                    alt="image lembah yosemite">
+                    <a class="element__text">Lembah Yosemite</a>
+                    <button type="button" class="element__like"></button>
+                </div>
+                <div class="element">
+                    <img 
+                    class="element__image"
+                    src="./elements/danau-louise-unsplash.png"
+                    alt=
+                    "image Danau Louise">
+                    <a class="element__text">Danau Louise</a>
+                    <button type="button" class="element__like"></button>
+                </div>
+                <div class="element">
+                    <img 
+                    class="element__image"
+                    src="./elements/pegunungan-gundul.png"
+                    alt="image pegunungan gundul">
+                    <a class="element__text">Pegunugan Gundul</a>
+                    <button type="button" class="element__like"></button>
+                </div>
+                <div class="element">
+                    <img 
+                    class="element__image"
+                    src="./elements/latemar.png"
+                    alt="image latemar">
+                    <a class="element__text">Latemar</a>
+                    <button type="button" class="element__like"></button>
+                </div>
+                <div class="element">
+                    <img 
+                    class="element__image"
+                    src="./elements/vanoiseNational.png"
+                    alt="image Vanoise National">
+                    <a class="element__text">vanoise National</a>
+                    <button type="button" class="element__like"></button>
+                </div>
+                <div class="element">
+                    <img 
+                    class="element__image"
+                    src="./elements/LagodiBraies.png"
+                    alt="image Lago di Braies">
+                    <a class="element__text">Lago di Braies</a>
+                    <button type="button" class="element__like"></button>
+                </div>
+            </section>
+
+            <section class="popup">    
+                <div id="editProfilePopup" class="popup__content">
+                    <form id="myForm" class="popup__container">
+                        <h2 class="popup__title">Edit Profil</h2>
+                        <input type="text" id="name" placeholder="Nama" class="popup__input">
+                        <input id="about" placeholder="Tentang Saya" class="popup__input">
+                        <button type="submit" class="popup__save-button">Simpan</button>
+                        <button type="button" class="popup__close-button"></button>
+                    </form>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <p class="footer__copyright">© 2021 Around The U.S.</p>
+            </footer>
+        </main>
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>

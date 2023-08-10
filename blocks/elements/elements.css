@@ -1,0 +1,27 @@
+.elements {
+    margin: auto;
+    width: 880px;
+    height: 743px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px){
+    .elements{
+        width: 320px;
+        height: 2266px;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px){
+    .elements{
+        width: 768px;
+        height: 1115px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
