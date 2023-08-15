@@ -40,14 +40,17 @@ function closeEditProfilePopup() {
 // popup add button
 let addbutton = document.querySelector('.profile__add-button')
 let closedaddbutton = document.querySelector('.popup-add__close-button')
+let displaytitle = document.querySelector('.profile__add-heading')
+let displayurl = document.querySelector('.profile__add-subtitle')
 
-document.getElementById = ('addForm').addEventListener('submit', saveButton );
+document.getElementById = ('addForm').addEventListener('add', saveForm);
 
-addbutton.addEventListener('click', showEditProfilePopup)
-closedaddbutton.addEventListener('click', closeEditProfilePopup)
+addbutton.addEventListener('onclick', showaddPostPopup)
+closedaddbutton.addEventListener('onclick', closeaddPostPopup)
 
 var addPostPopup = document.querySelector("#addPostPopup");
-function showAddPostPopup(){
+
+function showaddPostPopup(){
   addPostPopup.classList.add('visible');
   const title = document.getElementById('title').addContent;
   const url = document.getElementById('url').addContent;
@@ -56,7 +59,7 @@ function showAddPostPopup(){
   document.getElementById('addPostPopup');
 }
 
-function closedaddbutton() {
+function closeaddPostPopup() {
   addPostPopup.classList.remove('visible');
 }
 
