@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Di Sekitar A.S</title>
     <link href="./pages/index.css" rel="stylesheet">
+    <link href="./popup-add.css" rel="stylesheet">
 </head>
 <body class="page">
     <div>
@@ -34,17 +35,41 @@
                     </div>
                     <p class="profile__info-subtitle">Penjelajah</p>
                 </div>
+
                 <div class="profile__add">
                     <button type="button" class="profile__add-button">
                         <!--in css-->
                     </button>
                 </div>
-                
+            </section>
+
+            <section class="popup">    
+                <div id="editProfilePopup" class="popup__content">
+                    <form id="myForm" class="popup__container">
+                        <h2 class="popup__title">Edit Profil</h2>
+                        <input type="text" id="name" placeholder="Nama" class="popup__input">
+                        <input id="about" placeholder="Tentang Saya" class="popup__input">
+                        <button type="submit" class="popup__save-button">Simpan</button>
+                        <button type="button" class="popup__close-button"></button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="popup-add">
+                <div id="addPostPopup" class="popup-add__content">
+                    <form id="addForm" class="popup-add__container">
+                        <h2 class="popup-add__title">Tempat baru</h2>
+                        <input type="text" id="title" placeholder="Judul" class="popup-add__input">
+                        <input id="url" placeholder="URL gambar" class="popup-add__input">
+                        <button type="submit" class="popup-add__save-button">Simpan</button>
+                        <button type="button" class="popup-add__close-button"></button>
+                    </form>
+                </div>
             </section>
 
             <section class="elements">
-                <div class="element">
-                    <img 
+                <!--<div class="element">
+                    <!--<img 
                     class="element__image"
                     src="./elements/kirill-pershin-1088404-unsplash.png"
                     alt="image lembah yosemite">
@@ -52,11 +77,11 @@
                     <button type="button" class="element__like"></button>
                 </div>
                 <div class="element">
-                    <img 
+                    <!--<img 
                     class="element__image"
                     src="./elements/danau-louise-unsplash.png"
                     alt=
-                    "image Danau Louise">
+                    "image Danau Louise"
                     <a class="element__text">Danau Louise</a>
                     <button type="button" class="element__like"></button>
                 </div>
@@ -91,19 +116,7 @@
                     alt="image Lago di Braies">
                     <a class="element__text">Lago di Braies</a>
                     <button type="button" class="element__like"></button>
-                </div>
-            </section>
-
-            <section class="popup">    
-                <div id="editProfilePopup" class="popup__content">
-                    <form id="myForm" class="popup__container">
-                        <h2 class="popup__title">Edit Profil</h2>
-                        <input type="text" id="name" placeholder="Nama" class="popup__input">
-                        <input id="about" placeholder="Tentang Saya" class="popup__input">
-                        <button type="submit" class="popup__save-button">Simpan</button>
-                        <button type="button" class="popup__close-button"></button>
-                    </form>
-                </div>
+                </div>-->
             </section>
 
             <footer class="footer">
