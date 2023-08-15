@@ -1,4 +1,4 @@
-# Proyek 5: Di Sekitar Amerika Serikat
+# Proyek 6: Di Sekitar Amerika Serikat
 
 ### Ringkasan
 
