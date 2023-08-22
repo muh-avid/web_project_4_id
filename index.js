@@ -3,20 +3,25 @@ let editbutton=document.querySelector('.profile__info-button')
 let closeditmodalbutton=document.querySelector('.popup__close-button')
 let displayname=document.querySelector('.profile__info-heading')
 let displayabout=document.querySelector('.profile__info-subtitle')
+// popup add button
+let addbutton = document.querySelector('.profile__add-button')
+let closedaddbutton = document.querySelector('.popup-add__close-button')
+let displaytitle = document.querySelector('.profile__add-heading')
+let displayurl = document.querySelector('.profile__add-subtitle')
 
 document.getElementById('myForm').addEventListener('submit', saveProfile);
-
 
 editbutton.addEventListener('click', showEditProfilePopup)
 closeditmodalbutton.addEventListener('click', closeEditProfilePopup)
 
 var editProfilePopup = document.querySelector("#editProfilePopup");
+var addPostPopup = document.querySelector("#addPostPopup");
 
 function showEditProfilePopup() {
   editProfilePopup.classList.add('visible');
   
-  const name = document.getElementById('name').textContent;
-  const about = document.getElementById('about').textContent;
+  const name = displayname.textContent;
+  const about = displayabout.textContent;
   document.getElementById('name').value = name;
   document.getElementById('about').value = about;
   document.getElementById('editProfilePopup');
@@ -24,6 +29,8 @@ function showEditProfilePopup() {
 
 function closeEditProfilePopup() {
   editProfilePopup.classList.remove('visible');
+  addPostPopup.classList.remove('visible');
+  console.log('a')
 }
   
 
@@ -37,18 +44,14 @@ function closeEditProfilePopup() {
     closeEditProfilePopup();
   }
   
-// popup add button
-let addbutton = document.querySelector('.profile__add-button')
-let closedaddbutton = document.querySelector('.popup-add__close-button')
-let displaytitle = document.querySelector('.profile__add-heading')
-let displayurl = document.querySelector('.profile__add-subtitle')
 
-document.getElementById = ('addForm').addEventListener('add', saveForm);
 
-addbutton.addEventListener('onclick', showaddPostPopup)
-closedaddbutton.addEventListener('onclick', closeaddPostPopup)
+document.getElementById('myForm').addEventListener('add', saveForm);
 
-var addPostPopup = document.querySelector("#addPostPopup");
+addbutton.addEventListener('click', showaddPostPopup)
+closedaddbutton.addEventListener('click', closeaddPostPopup)
+
+
 
 function showaddPostPopup(){
   addPostPopup.classList.add('visible');
@@ -57,20 +60,22 @@ function showaddPostPopup(){
   document.getElementById('title').value = title;
   document.getElementById('url').value = url;
   document.getElementById('addPostPopup');
+
+  //closeditmodalbutton.addEventListener('click', closeEditProfilePopup)
 }
 
 function closeaddPostPopup() {
   addPostPopup.classList.remove('visible');
 }
 
-function saveButton(event) {
+function saveForm(event) {
   event.preventDefault();
   var title = document.getElementById("title").value;
   var url = document.getElementById("url").value;
   displaytitle.addContent = title
   displayurl.addContent = url  
 
-  closedaddbutton();
+  closeaddPostPopup();
 }
 
 
@@ -114,7 +119,7 @@ function renderCard(card) {
 
   const text = document.createElement('a');
   text.classList.add('element__text');
- ;text.textContent = card.name;
+  text.textContent = card.name;
 
   const likeButton = document.createElement('button');
   likeButton.classList.add('element__like');
