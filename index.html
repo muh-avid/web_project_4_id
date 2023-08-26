@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Di Sekitar A.S</title>
     <link href="./pages/index.css" rel="stylesheet">
-    <link href="./popup-add.css" rel="stylesheet">
+    <link href="./__delete.css" rel="stylesheet">
+    <link href="./overlay.css" rel="stylesheet">
 </head>
 <body class="page">
     <div>
@@ -68,56 +69,18 @@
             </section>
 
             <section class="elements">
-                <!--<div class="element">
-                    <!--<img 
-                    class="element__image"
-                    src="./elements/kirill-pershin-1088404-unsplash.png"
-                    alt="image lembah yosemite">
-                    <a class="element__text">Lembah Yosemite</a>
-                    <button type="button" class="element__like"></button>
-                </div>
-                <div class="element">
-                    <!--<img 
-                    class="element__image"
-                    src="./elements/danau-louise-unsplash.png"
-                    alt=
-                    "image Danau Louise"
-                    <a class="element__text">Danau Louise</a>
-                    <button type="button" class="element__like"></button>
-                </div>
-                <div class="element">
-                    <img 
-                    class="element__image"
-                    src="./elements/pegunungan-gundul.png"
-                    alt="image pegunungan gundul">
-                    <a class="element__text">Pegunugan Gundul</a>
-                    <button type="button" class="element__like"></button>
-                </div>
-                <div class="element">
-                    <img 
-                    class="element__image"
-                    src="./elements/latemar.png"
-                    alt="image latemar">
-                    <a class="element__text">Latemar</a>
-                    <button type="button" class="element__like"></button>
-                </div>
-                <div class="element">
-                    <img 
-                    class="element__image"
-                    src="./elements/vanoiseNational.png"
-                    alt="image Vanoise National">
-                    <a class="element__text">vanoise National</a>
-                    <button type="button" class="element__like"></button>
-                </div>
-                <div class="element">
-                    <img 
-                    class="element__image"
-                    src="./elements/LagodiBraies.png"
-                    alt="image Lago di Braies">
-                    <a class="element__text">Lago di Braies</a>
-                    <button type="button" class="element__like"></button>
-                </div>-->
+
             </section>
+            
+                <div class="overlay" id="overlay"></div>
+            
+
+            <div class="popup" style="display: none;">
+                <button class="popup__close">Close</button>
+                <img class="popup__image" src="" alt="">
+                <p class="popup__text"></p>
+              </div>
+              
 
             <footer class="footer">
                 <p class="footer__copyright">© 2021 Around The U.S.</p>

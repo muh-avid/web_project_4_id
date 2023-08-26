@@ -3,7 +3,7 @@
     height: 361px;
     display: grid;
     grid-template-columns: 80% 20%;
-    grid-template-areas: 'images images' 'text like';
+    grid-template-areas: 'images delete' 'text like';
     border-radius: 5%;
     background-color: #fff;
     overflow: hidden;

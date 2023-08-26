@@ -15,16 +15,26 @@ editbutton.addEventListener('click', showEditProfilePopup)
 closeditmodalbutton.addEventListener('click', closeEditProfilePopup)
 
 var editProfilePopup = document.querySelector("#editProfilePopup");
-var addPostPopup = document.querySelector("#addPostPopup");
+
 
 function showEditProfilePopup() {
   editProfilePopup.classList.add('visible');
-  
   const name = displayname.textContent;
   const about = displayabout.textContent;
   document.getElementById('name').value = name;
   document.getElementById('about').value = about;
   document.getElementById('editProfilePopup');
+}
+
+var addPostPopup = document.querySelector("#addPostPopup");
+
+function showaddPostPopup(){
+  addPostPopup.classList.add('visible');
+  const title = document.getElementById('title').addContent;
+  const url = document.getElementById('url').addContent;
+  document.getElementById('title').value = title;
+  document.getElementById('url').value = url;
+  document.getElementById('addPostPopup');
 }
 
 function closeEditProfilePopup() {
@@ -44,9 +54,7 @@ function closeEditProfilePopup() {
     closeEditProfilePopup();
   }
   
-
-
-document.getElementById('myForm').addEventListener('add', saveForm);
+document.getElementById('addForm').addEventListener('submit', saveForm);
 
 addbutton.addEventListener('click', showaddPostPopup)
 closedaddbutton.addEventListener('click', closeaddPostPopup)
@@ -61,7 +69,6 @@ function showaddPostPopup(){
   document.getElementById('url').value = url;
   document.getElementById('addPostPopup');
 
-  //closeditmodalbutton.addEventListener('click', closeEditProfilePopup)
 }
 
 function closeaddPostPopup() {
@@ -72,8 +79,12 @@ function saveForm(event) {
   event.preventDefault();
   var title = document.getElementById("title").value;
   var url = document.getElementById("url").value;
-  displaytitle.addContent = title
-  displayurl.addContent = url  
+ console.log('fdfsdfsds');
+
+  var cardItem = {name:title, link:url}
+  initialCards.unshift (cardItem )
+  console.log (initialCards);
+  renderSection();
 
   closeaddPostPopup();
 }
@@ -108,7 +119,7 @@ function saveForm(event) {
   ];
   
   // Fungsi untuk merender elemen-elemen HTML berdasarkan data
-function renderCard(card) {
+function renderCard(card ,idx ,like, img) {
   const element = document.createElement('div');
   element.classList.add('element');
 
@@ -116,6 +127,15 @@ function renderCard(card) {
   image.classList.add('element__image');
   image.src = card.link;
   image.alt = `Image ${card.name}`;
+  image.addEventListener('click',showImg)
+
+  //var showImage = document.querySelector ("#showImage")
+
+  function showImg() {
+    console.log('image', img)
+  }
+
+
 
   const text = document.createElement('a');
   text.classList.add('element__text');
@@ -123,20 +143,55 @@ function renderCard(card) {
 
   const likeButton = document.createElement('button');
   likeButton.classList.add('element__like');
+  likeButton.addEventListener('click',likeBtn)
+
+  function likeBtn(){
+    console.log('suka', like)
+    likeButton.classList.toggle('clicked'); // Menggunakan toggle untuk beralih antara kelas clicked
+
+  // Mengubah latar belakang tombol menjadi hitam ketika tombol diklik
+  if (likeButton.classList.contains('clicked')) {
+    likeButton.style.backgroundImage = 'url(/Images/ButtonLiked.svg)';
+    likeButton.style.color = 'white';
+  } else {
+    likeButton.style.backgroundColor = ''; // Kembalikan ke latar belakang awal
+    likeButton.style.color = ''; // Kembalikan ke warna teks awal
+  }
+
+  }
+
+  const dltButton = document.createElement('button');
+  dltButton.classList.add('element__delete');
+  dltButton.addEventListener('click',onDlt)
+  
+  function onDlt(){
+  
+    console.log('delete',idx)
+    initialCards.splice(idx,1)
+    renderSection();
+  }
+  
 
   // Menambahkan elemen-elemen ke dalam section elements
   element.appendChild(image);
   element.appendChild(text);
   element.appendChild(likeButton);
+  element.appendChild(dltButton);
 
   return element;
 }
 
-const section = document.querySelector('.elements');
+function renderSection(){
+  const section = document.querySelector('.elements');
+  section.innerHTML=''
 
-initialCards.forEach(card => {
-  const renderedCard = renderCard(card);
+initialCards.forEach((card,idx) => {
+  const renderedCard = renderCard(card,idx);
   section.appendChild(renderedCard);
 });
+
+}
+
+renderSection();
 
 
