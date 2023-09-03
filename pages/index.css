@@ -29,6 +29,7 @@
 @import url(../blocks/element/__image/element__image.css);
 @import url(../blocks/element/__text/element__text.css);
 @import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__delete/element__delete.css);
 
 /*popup*/
 @import url(../blocks/popup/__content/popup__content.css);

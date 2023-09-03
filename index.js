@@ -9,6 +9,7 @@ let closedaddbutton = document.querySelector('.popup-add__close-button')
 let displaytitle = document.querySelector('.profile__add-heading')
 let displayurl = document.querySelector('.profile__add-subtitle')
 
+
 document.getElementById('myForm').addEventListener('submit', saveProfile);
 
 editbutton.addEventListener('click', showEditProfilePopup)
@@ -79,18 +80,18 @@ function saveForm(event) {
   event.preventDefault();
   var title = document.getElementById("title").value;
   var url = document.getElementById("url").value;
- console.log('fdfsdfsds');
+ console.log('save');
 
   var cardItem = {name:title, link:url}
   initialCards.unshift (cardItem )
   console.log (initialCards);
-  renderSection();
+  //renderSection();
 
   closeaddPostPopup();
 }
 
 
-  // card template
+  // array of object
   const initialCards = [
     {
       name: "Lembah Yosemite",
@@ -117,81 +118,11 @@ function saveForm(event) {
       link: "https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lago.jpg"
     }
   ];
-  
-  // Fungsi untuk merender elemen-elemen HTML berdasarkan data
-function renderCard(card ,idx ,like, img) {
-  const element = document.createElement('div');
-  element.classList.add('element');
 
-  const image = document.createElement('img');
-  image.classList.add('element__image');
-  image.src = card.link;
-  image.alt = `Image ${card.name}`;
-  image.addEventListener('click',showImg)
+//template
+const template = document.querySelector('template');
+const clone = template.cloneNode(true);
 
-  //var showImage = document.querySelector ("#showImage")
-
-  function showImg() {
-    console.log('image', img)
-  }
-
-
-
-  const text = document.createElement('a');
-  text.classList.add('element__text');
-  text.textContent = card.name;
-
-  const likeButton = document.createElement('button');
-  likeButton.classList.add('element__like');
-  likeButton.addEventListener('click',likeBtn)
-
-  function likeBtn(){
-    console.log('suka', like)
-    likeButton.classList.toggle('clicked'); // Menggunakan toggle untuk beralih antara kelas clicked
-
-  // Mengubah latar belakang tombol menjadi hitam ketika tombol diklik
-  if (likeButton.classList.contains('clicked')) {
-    likeButton.style.backgroundImage = 'url(/Images/ButtonLiked.svg)';
-    likeButton.style.color = 'white';
-  } else {
-    likeButton.style.backgroundColor = ''; // Kembalikan ke latar belakang awal
-    likeButton.style.color = ''; // Kembalikan ke warna teks awal
-  }
-
-  }
-
-  const dltButton = document.createElement('button');
-  dltButton.classList.add('element__delete');
-  dltButton.addEventListener('click',onDlt)
-  
-  function onDlt(){
-  
-    console.log('delete',idx)
-    initialCards.splice(idx,1)
-    renderSection();
-  }
-  
-
-  // Menambahkan elemen-elemen ke dalam section elements
-  element.appendChild(image);
-  element.appendChild(text);
-  element.appendChild(likeButton);
-  element.appendChild(dltButton);
-
-  return element;
-}
-
-function renderSection(){
-  const section = document.querySelector('.elements');
-  section.innerHTML=''
-
-initialCards.forEach((card,idx) => {
-  const renderedCard = renderCard(card,idx);
-  section.appendChild(renderedCard);
-});
-
-}
-
-renderSection();
+//querySelector(template).content.cloneNode(true)
 
 

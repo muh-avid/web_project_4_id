@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Di Sekitar A.S</title>
     <link href="./pages/index.css" rel="stylesheet">
-    <link href="./__delete.css" rel="stylesheet">
-    <link href="./overlay.css" rel="stylesheet">
+    <link href="./imgpopup.css" rel="stylesheet">
 </head>
 <body class="page">
     <div>
@@ -68,22 +67,23 @@
                 </div>
             </section>
 
+           
             <section class="elements">
-
+                <template  id="template">
+                    <!--sample-->
+                    <div class="element">
+                     <img
+                     class="element_image" src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"/>
+                     <h2 class="element__text">Lembah Yosemite</h2>
+                     <button class="element__like"></button>
+                     <button class="element__delete"></button> 
+                    </div>
+             </template>
             </section>
             
-                <div class="overlay" id="overlay"></div>
-            
-
-            <div class="popup" style="display: none;">
-                <button class="popup__close">Close</button>
-                <img class="popup__image" src="" alt="">
-                <p class="popup__text"></p>
-              </div>
               
-
             <footer class="footer">
-                <p class="footer__copyright">© 2021 Around The U.S.</p>
+                <p class="footer__copyright">© 2023 Around The U.S.</p>
             </footer>
         </main>
     </div>
