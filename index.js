@@ -80,6 +80,8 @@ function saveForm(event) {
   event.preventDefault();
   var title = document.getElementById("title").value;
   var url = document.getElementById("url").value;
+    displayname.textContent=title
+    displayabout.textConten=url
  console.log('save');
 
   var cardItem = {name:title, link:url}
@@ -120,9 +122,32 @@ function saveForm(event) {
   ];
 
 //template
+const holder = document.getElementById ('holder');
 const template = document.querySelector('template');
-const clone = template.cloneNode(true);
+
+// > akan direplace dengan loop
+//const clone = template.content.cloneNode(true);
+//holder.appendChild(clone);
 
 //querySelector(template).content.cloneNode(true)
 
+//test
+//const clone2 = template.content.cloneNode(true);
+//holder.appendChild(clone2);
 
+for (let i = 0; i < initialCards.length; i++){
+  const { name, link } = initialCards[i];
+
+  const clone = template.content.cloneNode(true);
+  console.log(clone)
+
+
+
+  const nameTitle = clone.getElementById('nama');
+  nameTitle.innerText = name;
+
+  holder.appendChild(clone);
+}
+
+
+ 
