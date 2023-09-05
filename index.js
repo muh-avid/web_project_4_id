@@ -146,8 +146,9 @@ for (let i = 0; i < initialCards.length; i++){
   const nameTitle = clone.getElementById('nama');
   nameTitle.innerText = name;
 
+  // replace gambar
+  const imageLink = clone.getElementById('card')
+  imageLink.src = link;
+
   holder.appendChild(clone);
 }
-
-
- 
