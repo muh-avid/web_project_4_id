@@ -1,5 +1,47 @@
 .imgpopup {
-    display: flex;
-
-
+ display: flex;
+ background-color: black;
 }
+
+
+.popup__image {
+    max-width: 75vw;
+    max-height: 75vh;
+}
+
+.popup-img__close-button {
+    position: absolute;
+    top: -10px;
+    right:-24px;
+    background-image: url(/Images/close-Icon.svg);
+    width: 32px;
+    height: 33px;
+    background-color: transparent;
+    border: none;
+}
+
+.popup-img__close-button:hover {
+    cursor: pointer;
+    opacity: 0.6000000238418579;
+}
+
+.popup-img__container {
+    position: relative;
+    margin: auto;
+}
+
+.poup-img__text {
+    margin-left: 15px;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    grid-area: text;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: white;
+}
+
+
+
+   

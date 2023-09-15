@@ -10,6 +10,12 @@ let displaytitle = document.querySelector('.profile__add-heading')
 let displayurl = document.querySelector('.profile__add-subtitle')
 
 
+// popup image
+var Imgpopup = document.getElementById("popupImg")
+console.log(Imgpopup)
+
+let closeButtonImg = document.querySelector('.popup-img__close-button')
+
 document.getElementById('myForm').addEventListener('submit', saveProfile);
 
 editbutton.addEventListener('click', showEditProfilePopup)
@@ -87,7 +93,7 @@ function saveForm(event) {
   var cardItem = {name:title, link:url}
   initialCards.unshift (cardItem )
   console.log (initialCards);
-  //renderSection();
+  renderSection();
 
   closeaddPostPopup();
 }
@@ -125,30 +131,55 @@ function saveForm(event) {
 const holder = document.getElementById ('holder');
 const template = document.querySelector('template');
 
-// > akan direplace dengan loop
-//const clone = template.content.cloneNode(true);
-//holder.appendChild(clone);
+var selectedImage
 
-//querySelector(template).content.cloneNode(true)
+  function renderSection (){
+    holder.innerHTML=''
+    for (let i = 0; i < initialCards.length; i++){
+      const { name, link } = initialCards[i];
+    
+      const clone = template.content.cloneNode(true);
+      console.log(clone)
+    
+    
+    
+      const nameTitle = clone.getElementById('nama');
+      nameTitle.innerText = name;
+    
+      // replace gambar
+      const imageLink = clone.getElementById('card');
+      imageLink.src = link;
+    
+      let popupImg = clone.getElementById('card');
+      
+        popupImg.addEventListener("click", function(){
+        console.log ("clicked");
+        selectedImage=link;
+        console.log (Imgpopup)
+        Imgpopup.querySelector ('img').src = link;
+        Imgpopup.classList.add('imgpopup')
+        Imgpopup.querySelector ('h2').innerHTML = name
 
-//test
-//const clone2 = template.content.cloneNode(true);
-//holder.appendChild(clone2);
+      });
+      const deleteBtnImg = clone.querySelector ('.element__delete')
+        deleteBtnImg.addEventListener("click", function(){
+          console.log ("deleted",i)
+        initialCards.splice(i, 1);
+        renderSection ()
+        //array.splice(indexToRemove, 1);
+        })
+      holder.appendChild(clone);
+    }
 
-for (let i = 0; i < initialCards.length; i++){
-  const { name, link } = initialCards[i];
 
-  const clone = template.content.cloneNode(true);
-  console.log(clone)
+  }
 
+  renderSection ()
 
+  
+  closeButtonImg.addEventListener('click', closePopupImg)
 
-  const nameTitle = clone.getElementById('nama');
-  nameTitle.innerText = name;
-
-  // replace gambar
-  const imageLink = clone.getElementById('card')
-  imageLink.src = link;
-
-  holder.appendChild(clone);
-}
+  function closePopupImg () {
+    Imgpopup.classList.remove('imgpopup');
+    
+  }

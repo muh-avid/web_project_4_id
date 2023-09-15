@@ -2,7 +2,7 @@
     background-image: url(/Images/delete-icon.svg);
     width: 18px;
     height: 19px;
-    margin: 6px 0 0 15px;
+    margin: 6px auto ;
     border: none;
     text-align: center;
     grid-area: delete;

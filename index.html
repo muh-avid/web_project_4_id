@@ -55,47 +55,52 @@
                 </div>
             </section>
 
-            <section class="popup">
+            <section class="popup-image">
                 <div id="addPostPopup" class="popup__content">
                     <form id="addForm" class="popup__container">
                         <h2 class="popup__title">Tempat baru</h2>
                         <input type="text" id="title" placeholder="Judul" class="popup__input">
                         <input id="url" placeholder="URL gambar" class="popup__input">
                         <button type="submit" class="popup__save-button">Simpan</button>
-                        <button type="button" class="popup-add__close-button"></button>
+                        <button type="button" class="popup-add__close-button">x</button>
                     </form>
                 </div>
             </section>
 
-           
-
-            <section class="elements">
-                <template  id="template">
-                    <!--sample-->
-                    <div class="element">
-                     <img
-                        class="element__image" 
-                        src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"/>
-                     <h2 id="nama" class="element__text">Lembah Yosemite</h2>
-                     <button 
-                        type="button" 
-                        class="element__like">
-                    </button>
-                     <button 
-                        type="button" 
-                        class="element__delete">
-                    </button> 
+            <section class="popup">
+                <div id="popupImg" class="popup__content">
+                    <div class="popup-img__container">
+                    <button 
+                    type="button"
+                    class="popup-img__close-button"></button>
+                    <img class="popup__image">
+                    <h2 class="poup-img__text"></h2>
                     </div>
-                </template>
-
-                <!-- row -->
-                 <div id="holder" class="row row-elements-1 row-elements-sm-2 row-elements-md-3 g-3"></div>
-                <!-- row -->
-
+                </div>
             </section>
 
-            
-            
+
+            <section id="holder" class="elements"></section>
+
+            <template  id="template">
+                <!--sample-->
+                <div class="element">
+                 <img onclick="popupImg"
+                    id="card"
+                    class="element__image" 
+                    src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"/>
+                 <h2 id="nama" class="element__text">Lembah Yosemite</h2>
+                 <button 
+                    type="button" 
+                    class="element__like">
+                </button>
+                 <button 
+                    type="button" 
+                    class="element__delete">
+                </button> 
+                </div>
+            </template>
+  
               
             <footer class="footer">
                 <p class="footer__copyright">© 2023 Around The U.S.</p>
