@@ -13,3 +13,14 @@
     cursor: pointer;
     opacity: 0.6000000238418579;
 }
+
+.element__like_active {
+    width: 21px;
+    height: 19px;
+    margin: auto;
+    border: none;
+    text-align: center;
+    grid-area: like;
+    background-image: url(/Images/ButtonLiked.svg);
+    background-color: #fff;
+}

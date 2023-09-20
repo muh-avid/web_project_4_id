@@ -159,15 +159,27 @@ var selectedImage
         Imgpopup.querySelector ('img').src = link;
         Imgpopup.classList.add('imgpopup')
         Imgpopup.querySelector ('h2').innerHTML = name
-
       });
+
+      //delete button
       const deleteBtnImg = clone.querySelector ('.element__delete')
-        deleteBtnImg.addEventListener("click", function(){
-          console.log ("deleted",i)
+        deleteBtnImg.addEventListener("click", 
+        function() {
+        console.log ("deleted",i)
         initialCards.splice(i, 1);
         renderSection ()
-        //array.splice(indexToRemove, 1);
         })
+      
+      //like button
+      const LikedBtn = clone.querySelector ('.element__like')
+      LikedBtn.addEventListener("click", function(liked) {
+      liked.target.classList.toggle("element__liked_active")
+      console.log ("like")
+      })
+
+
+        
+
       holder.appendChild(clone);
     }
 
