@@ -47,7 +47,7 @@ function showaddPostPopup(){
 function closeEditProfilePopup() {
   editProfilePopup.classList.remove('visible');
   addPostPopup.classList.remove('visible');
-  console.log('a')
+  console.log('edit')
 }
   
 
@@ -177,9 +177,6 @@ var selectedImage
       console.log ("like")
       })
 
-
-        
-
       holder.appendChild(clone);
     }
 
@@ -195,3 +192,5 @@ var selectedImage
     Imgpopup.classList.remove('imgpopup');
     
   }
+
+  
