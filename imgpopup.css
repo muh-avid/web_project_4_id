@@ -16,7 +16,7 @@
 }
 
 
-.popup__image {
+.popup-img__image {
     max-width: 75vw;
     max-height: 75vh;
     transform:  translate(-3%, 3%);
