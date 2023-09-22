@@ -2,3 +2,9 @@
 .visible {
   display: flex;
 }
+
+.imgpopup {
+  display: flex;
+  background-color: black;
+ }
+ 
