@@ -1,4 +1,4 @@
-.popup__content {
+.popup__content, .popup-img__content {
     display: none;
     position: fixed;
     z-index: 1;

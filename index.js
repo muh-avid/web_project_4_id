@@ -5,7 +5,7 @@ let displayname=document.querySelector('.profile__info-heading')
 let displayabout=document.querySelector('.profile__info-subtitle')
 // popup add button
 let addbutton = document.querySelector('.profile__add-button')
-let closedaddbutton = document.querySelector('.popup-add__close-button')
+let closedaddbutton = document.querySelector('.popup__addClose-button')
 let displaytitle = document.querySelector('.profile__add-heading')
 let displayurl = document.querySelector('.profile__add-subtitle')
 
@@ -79,6 +79,7 @@ function showaddPostPopup(){
 }
 
 function closeaddPostPopup() {
+  console.log (close)
   addPostPopup.classList.remove('visible');
 }
 
@@ -173,7 +174,7 @@ var selectedImage
       //like button
       const LikedBtn = clone.querySelector ('.element__like')
       LikedBtn.addEventListener("click", function(liked) {
-      liked.target.classList.toggle("element__liked_active")
+      liked.target.classList.toggle("element__liked-active")
       console.log ("like")
       })
 
