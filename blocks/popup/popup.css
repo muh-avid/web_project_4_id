@@ -6,5 +6,6 @@
 .imgpopup {
   display: flex;
   background-color: black;
+  z-index: 2;
  }
  
