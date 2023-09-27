@@ -1,7 +1,6 @@
 .elements {
     margin: auto;
     width: 880px;
-    height: 743px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -22,6 +21,5 @@
         height: 1115px;
         display: flex;
         flex-wrap: wrap;
-        flex-direction: column;
     }
 }

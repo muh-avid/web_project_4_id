@@ -54,6 +54,7 @@
                 </div>
             </section>
 
+            
             <section class="popup">
                 <div id="addPostPopup" class="popup__content">
                     <form id="addForm" class="popup__container">
@@ -79,26 +80,28 @@
             </section>
 
 
-            <section id="holder" class="elements"></section>
+            <section id="holder" class="elements">
+                <template  id="template">
+                    <!--sample-->
+                    <div class="element">
+                     <img onclick="popupImg"
+                        id="card"
+                        class="element__image" 
+                        src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"/>
+                     <h2 id="nama" class="element__text">Lembah Yosemite</h2>
+                     <button 
+                        type="button" 
+                        class="element__like">
+                    </button>
+                     <button 
+                        type="button" 
+                        class="element__delete">
+                    </button> 
+                    </div>
+                </template>
+            </section>
 
-            <template  id="template">
-                <!--sample-->
-                <div class="element">
-                 <img onclick="popupImg"
-                    id="card"
-                    class="element__image" 
-                    src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"/>
-                 <h2 id="nama" class="element__text">Lembah Yosemite</h2>
-                 <button 
-                    type="button" 
-                    class="element__like">
-                </button>
-                 <button 
-                    type="button" 
-                    class="element__delete">
-                </button> 
-                </div>
-            </template>
+           
   
               
             <footer class="footer">

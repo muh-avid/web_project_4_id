@@ -37,10 +37,11 @@ var addPostPopup = document.querySelector("#addPostPopup");
 
 function showaddPostPopup(){
   addPostPopup.classList.add('visible');
-  const title = document.getElementById('title').addContent;
-  const url = document.getElementById('url').addContent;
-  document.getElementById('title').value = title;
-  document.getElementById('url').value = url;
+  const title = document.getElementById('title').textContent;
+  const url = document.getElementById('url').textContent;
+  console.log (url)
+    document.getElementById('title').value = title;
+    document.getElementById('url').value = url;
   document.getElementById('addPostPopup');
 }
 
@@ -72,8 +73,14 @@ function showaddPostPopup(){
   addPostPopup.classList.add('visible');
   const title = document.getElementById('title').addContent;
   const url = document.getElementById('url').addContent;
-  document.getElementById('title').value = title;
+  if (title) {
+    document.getElementById('title').value = title;
+  }
+
+  if (url) {
   document.getElementById('url').value = url;
+}  
+  
   document.getElementById('addPostPopup');
 
 }
@@ -87,8 +94,6 @@ function saveForm(event) {
   event.preventDefault();
   var title = document.getElementById("title").value;
   var url = document.getElementById("url").value;
-    displayname.textContent=title
-    displayabout.textConten=url
  console.log('save');
 
   var cardItem = {name:title, link:url}
