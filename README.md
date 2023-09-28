@@ -1,5 +1,14 @@
 # Proyek 6: Di Sekitar Amerika Serikat
 
+## Deskripsi
+* Memiliki 6 card dan masing" pada cards tersebut pada saat di klik muncul popup gambar tersebut
+* Menggunakan carousel untuk menampilkan foto-foto yang ada dalam folder "images"
+* Memiliki tombol yang berfugsi :
++ Mengedit profile yaitu mengubah nama dan tentang diri
++ Menambah Foto cards
++ Hapus Cards
++ Like Cards
+
 ### Ringkasan
 
 * Figma
