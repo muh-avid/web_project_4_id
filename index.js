@@ -1,33 +1,33 @@
 //popup id
-let editbutton=document.querySelector('.profile__info-button')
-let closeditmodalbutton=document.querySelector('.popup__close-button')
-let displayname=document.querySelector('.profile__info-heading')
-let displayabout=document.querySelector('.profile__info-subtitle')
+const editButton=document.querySelector('.profile__info-button')
+const closeEditModalButton=document.querySelector('.popup__close-button')
+const displayName=document.querySelector('.profile__info-heading')
+const displayAbout=document.querySelector('.profile__info-subtitle')
 // popup add button
-let addbutton = document.querySelector('.profile__add-button')
-let closedaddbutton = document.querySelector('.popup__addClose-button')
-let displaytitle = document.querySelector('.profile__add-heading')
-let displayurl = document.querySelector('.profile__add-subtitle')
+const addButton = document.querySelector('.profile__add-button')
+const closedAddButton = document.querySelector('.popup__addClose-button')
+const displayTitle = document.querySelector('.profile__add-heading')
+const displayUrl = document.querySelector('.profile__add-subtitle')
 
 
 // popup image
-var Imgpopup = document.getElementById("popupImg")
-console.log(Imgpopup)
+var imgPopup = document.getElementById("popupImg")
 
-let closeButtonImg = document.querySelector('.popup-img__close-button')
+
+const closeButtonImg = document.querySelector('.popup-img__close-button')
 
 document.getElementById('myForm').addEventListener('submit', saveProfile);
 
-editbutton.addEventListener('click', showEditProfilePopup)
-closeditmodalbutton.addEventListener('click', closeEditProfilePopup)
+editButton.addEventListener('click', showEditProfilePopup)
+closeEditModalButton.addEventListener('click', closeEditProfilePopup)
 
 var editProfilePopup = document.querySelector("#editProfilePopup");
 
 
 function showEditProfilePopup() {
   editProfilePopup.classList.add('visible');
-  const name = displayname.textContent;
-  const about = displayabout.textContent;
+  const name = displayName.textContent;
+  const about = displayAbout.textContent;
   document.getElementById('name').value = name;
   document.getElementById('about').value = about;
   document.getElementById('editProfilePopup');
@@ -39,7 +39,7 @@ function showaddPostPopup(){
   addPostPopup.classList.add('visible');
   const title = document.getElementById('title').textContent;
   const url = document.getElementById('url').textContent;
-  console.log (url)
+  
     document.getElementById('title').value = title;
     document.getElementById('url').value = url;
   document.getElementById('addPostPopup');
@@ -48,7 +48,7 @@ function showaddPostPopup(){
 function closeEditProfilePopup() {
   editProfilePopup.classList.remove('visible');
   addPostPopup.classList.remove('visible');
-  console.log('edit')
+  
 }
   
 
@@ -56,16 +56,16 @@ function closeEditProfilePopup() {
     event.preventDefault();
     var name = document.getElementById("name").value;
     var about = document.getElementById("about").value;
-    displayname.textContent=name
-    displayabout.textContent=about
+    displayName.textContent=name
+    displayAbout.textContent=about
     
     closeEditProfilePopup();
   }
   
 document.getElementById('addForm').addEventListener('submit', saveForm);
 
-addbutton.addEventListener('click', showaddPostPopup)
-closedaddbutton.addEventListener('click', closeaddPostPopup)
+addButton.addEventListener('click', showaddPostPopup)
+closedAddButton.addEventListener('click', closeaddPostPopup)
 
 
 
@@ -86,7 +86,7 @@ function showaddPostPopup(){
 }
 
 function closeaddPostPopup() {
-  console.log (close)
+  
   addPostPopup.classList.remove('visible');
 }
 
@@ -94,11 +94,11 @@ function saveForm(event) {
   event.preventDefault();
   var title = document.getElementById("title").value;
   var url = document.getElementById("url").value;
- console.log('save');
+ 
 
   var cardItem = {name:title, link:url}
   initialCards.unshift (cardItem )
-  console.log (initialCards);
+  
   renderSection();
 
   closeaddPostPopup();
@@ -145,7 +145,7 @@ var selectedImage
       const { name, link } = initialCards[i];
     
       const clone = template.content.cloneNode(true);
-      console.log(clone)
+     
     
     
     
@@ -159,19 +159,19 @@ var selectedImage
       let popupImg = clone.getElementById('card');
       
         popupImg.addEventListener("click", function(){
-        console.log ("clicked");
+        
         selectedImage=link;
-        console.log (Imgpopup)
-        Imgpopup.querySelector ('img').src = link;
-        Imgpopup.classList.add('imgpopup')
-        Imgpopup.querySelector ('h2').innerHTML = name
+       
+        imgPopup.querySelector ('img').src = link;
+        imgPopup.classList.add('imgpopup')
+        imgPopup.querySelector ('h2').innerHTML = name
       });
 
       //delete button
       const deleteBtnImg = clone.querySelector ('.element__delete')
         deleteBtnImg.addEventListener("click", 
         function() {
-        console.log ("deleted",i)
+        
         initialCards.splice(i, 1);
         renderSection ()
         })
@@ -180,7 +180,7 @@ var selectedImage
       const LikedBtn = clone.querySelector ('.element__like')
       LikedBtn.addEventListener("click", function(liked) {
       liked.target.classList.toggle("element__liked-active")
-      console.log ("like")
+      
       })
 
       holder.appendChild(clone);
@@ -195,7 +195,7 @@ var selectedImage
   closeButtonImg.addEventListener('click', closePopupImg)
 
   function closePopupImg () {
-    Imgpopup.classList.remove('imgpopup');
+    imgPopup.classList.remove('imgpopup');
     
   }
 
