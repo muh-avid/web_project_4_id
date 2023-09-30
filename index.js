@@ -11,7 +11,7 @@ const displayUrl = document.querySelector('.profile__add-subtitle')
 
 
 // popup image
-var imgPopup = document.getElementById("popupImg")
+const imgPopup = document.getElementById("popupImg")
 
 
 const closeButtonImg = document.querySelector('.popup-img__close-button')
@@ -21,7 +21,7 @@ document.getElementById('myForm').addEventListener('submit', saveProfile);
 editButton.addEventListener('click', showEditProfilePopup)
 closeEditModalButton.addEventListener('click', closeEditProfilePopup)
 
-var editProfilePopup = document.querySelector("#editProfilePopup");
+const editProfilePopup = document.querySelector("#editProfilePopup");
 
 
 function showEditProfilePopup() {
@@ -33,7 +33,7 @@ function showEditProfilePopup() {
   document.getElementById('editProfilePopup');
 }
 
-var addPostPopup = document.querySelector("#addPostPopup");
+const addPostPopup = document.querySelector("#addPostPopup");
 
 function showaddPostPopup(){
   addPostPopup.classList.add('visible');
@@ -54,8 +54,8 @@ function closeEditProfilePopup() {
 
   function saveProfile(event) {
     event.preventDefault();
-    var name = document.getElementById("name").value;
-    var about = document.getElementById("about").value;
+    const name = document.getElementById("name").value;
+    const about = document.getElementById("about").value;
     displayName.textContent=name
     displayAbout.textContent=about
     
@@ -92,11 +92,11 @@ function closeaddPostPopup() {
 
 function saveForm(event) {
   event.preventDefault();
-  var title = document.getElementById("title").value;
-  var url = document.getElementById("url").value;
+  const title = document.getElementById("title").value;
+  const url = document.getElementById("url").value;
  
 
-  var cardItem = {name:title, link:url}
+  const cardItem = {name:title, link:url}
   initialCards.unshift (cardItem )
   
   renderSection();
@@ -156,7 +156,7 @@ var selectedImage
       const imageLink = clone.getElementById('card');
       imageLink.src = link;
     
-      let popupImg = clone.getElementById('card');
+      const popupImg = clone.getElementById('card');
       
         popupImg.addEventListener("click", function(){
         
