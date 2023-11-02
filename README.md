@@ -22,4 +22,4 @@
 
 Cara Anda melakukannya di tempat kerja adalah dengan mengekspor gambar langsung dari Figma — kami menyarankan melakukan hal tersebut agar Anda berlatih lebih banyak. Jangan lupa untuk mengoptimalkannya [di sini](https://tinypng.com/), sehingga proyek Anda dapat dimuat dengan lebih cepat.
 
-Selamat bersenang-senang dengan JavaScript!
+Selamat bersenang-senang dengan JavaScript! ini adalah sprrint 7
