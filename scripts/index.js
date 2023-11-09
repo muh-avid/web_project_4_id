@@ -35,15 +35,15 @@ function showEditProfilePopup() {
 
 const addPostPopup = document.querySelector("#addPostPopup");
 
-function showaddPostPopup(){
-  addPostPopup.classList.add('visible');
-  const title = document.getElementById('title').textContent;
-  const url = document.getElementById('url').textContent;
+// function showaddPostPopup(){ 
+//   addPostPopup.classList.add('visible');
+//   const title = document.getElementById('title').textContent;
+//   const url = document.getElementById('url').textContent;
   
-    document.getElementById('title').value = title;
-    document.getElementById('url').value = url;
-  document.getElementById('addPostPopup');
-}
+//     document.getElementById('title').value = title;
+//     document.getElementById('url').value = url;
+//   document.getElementById('addPostPopup');
+// }
 
 function closeEditProfilePopup() {
   editProfilePopup.classList.remove('visible');
@@ -69,6 +69,22 @@ closedAddButton.addEventListener('click', closeaddPostPopup)
 
 
 
+// function showaddPostPopup(){
+//   addPostPopup.classList.add('visible');
+//   const title = document.getElementById('title').addContent;
+//   const url = document.getElementById('url').addContent;
+//   if (title) {
+//     document.getElementById('title').value = title;
+//   }
+
+//   if (url) {
+//   document.getElementById('url').value = url;
+// }  
+  
+//   document.getElementById('addPostPopup');
+
+// }
+
 function showaddPostPopup(){
   addPostPopup.classList.add('visible');
   const title = document.getElementById('title').addContent;
@@ -84,6 +100,7 @@ function showaddPostPopup(){
   document.getElementById('addPostPopup');
 
 }
+  
 
 function closeaddPostPopup() {
   
@@ -198,5 +215,3 @@ var selectedImage
     imgPopup.classList.remove('imgpopup');
     
   }
-
-  
