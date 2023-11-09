@@ -68,10 +68,10 @@ function enableValidation({
 }
 
 enableValidation({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible',
+  formSelector: '.popup__form', //done
+  inputSelector: '.popup__input', //done
+  submitButtonSelector: '.popup__button', //done
+  inactiveButtonClass: 'popup__button_disabled', //done
+  inputErrorClass: 'popup__input_type_error', //done
+  errorClass: 'popup__error_visible', //done
 });
