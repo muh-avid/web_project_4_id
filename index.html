@@ -1,125 +1,145 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Di Sekitar Makassar</title>
-    <link href="./pages/index.css" rel="stylesheet">
-    <link href="./validate.css" rel="stylesheet">
-</head>
-<body class="page">
-    <div>
-        <header class="header">
-            <img 
-            class="header__logo"
-            src="./Images/AroundTheUS.png"
-            alt="logo Around The U.S">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Around The U.S.</title>
+        <link rel="stylesheet" href="./pages/index.css" />
+    </head>
 
-            <!--REVISI__LINE-->
-            <!--<img
-            class="header__line"
-            src="./Images/Line.png"
-            alt="line in headers">-->
-        </header>
-        
-        <hr class="header__line">
-
-        <main class="content">
-            <section class="profile">
-                <img
-                class="profile__avatar"
-                src="./Images/imageProfile.jpg"
-                alt="image profile">
-                <div class="profile__info">
-                    <div class="profile__info-container">
-                        <h1 class="profile__info-heading">Jacques Cousteau</h1>
-                        <button type="button" class="profile__info-button"><!--in css--></button>
-                    </div>
-                    <p class="profile__info-subtitle">Penjelajah</p>
-                </div>
-
-                <div class="profile__add">
-                    <button type="button" class="profile__add-button">
-                        <!--in css-->
-                    </button>
-                </div>
-            </section>
-
-            <section class="popup">    
-                <div id="editProfilePopup" class="popup__content">
-                    
-                    <form id="myForm" class="popup__container" novalidate>
-                        <h2 class="popup__title">Edit Profil</h2>
-                        <label class="popup__field">
-                            <input type="text" id="name" placeholder="Nama" class="popup__input">
-                            <span class="description-input-error popup__input-error "></span>
-                        </label>
-                        
-
-                        <input id="about" placeholder="Tentang Saya" class="popup__input">
-                        <button type="submit" class="popup__save-button">Simpan</button>
-                        <button type="button" class="popup__close-button"></button>
-                    </form>
-                </div>
-            </section>
-
+    <body class="page">
+        <div class="page__container">
             
-            <section class="popup">
-                <div id="addPostPopup" class="popup__content">
-                    <form id="addForm" class="popup__container" novalidate>
-                        <h2 class="popup__title">Tempat baru</h2>
-                        <input type="text" id="title" placeholder="Judul" class="popup__input">
+            <header class="header">
+                <img src="./images/logo.svg" alt="Around The U.S." class="header__logo" />
+            </header>
+            
+            <main class="main">
+                <section class="profile">
+                    <div class="profile__data">
+                        <img src="./images/avatar.png" alt="Denny Rachmat Mustofa" class="profile__avatar">            
+                        <div class="profile__info">
+                            <div class="profile__text">
+                                <h1 class="profile__name">Denny Rachmat Mustofa</h1>
+                                <p class="profile__job">Penjelajah</p>
+                            </div>
+                            <button type="button" aria-label="Edit" class="button button_type_edit"></button>
+                        </div>
+                    </div>
+                    <button aria-label="Add" class="button button_type_add"></button>
+                </section>
 
-                        <input id="url" placeholder="URL gambar" class="popup__input">
-                        <button type="submit" class="popup__save-button">Simpan</button>
-                        <button type="button" class="popup__addClose-button"></button>
+                <section class="places">
+                    <ul class="places__list"></ul>
+                </section>
+            </main>
+            
+            <footer class="footer">
+                <p class="footer__text">© 2020 Around The U.S.</p>
+            </footer>
+            
+            <div class="popup popup_type_edit">
+                <div class="popup__container">
+                    <button type="button" aria-label="Close" class="button button_type_close"></button>
+                    <h3 class="popup__title">Edit profile</h3>
+                    <form method="POST" name="popup_type_edit" class="popup__form popup__form_type_edit">
+                        <label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="profile-name"
+                                class="popup__input popup__input_type_name"
+                                placeholder="Name"
+                                required
+                                minlength="2"
+                                maxlength="40"
+                            />
+                            <span class="popup__error" id="profile-name-error"></span>
+                        </label>
+                        <label>
+                            <input
+                                type="text"
+                                name="job"
+                                id="profile-job"
+                                class="popup__input popup__input_type_job"
+                                placeholder="About me"
+                                required
+                                minlength="2"
+                                maxlength="200"
+                            />
+                            <span class="popup__error" id="profile-job-error"></span>
+                        </label>
+                        <input
+                            type="submit"
+                            value="Save"
+                            class="button button_type_save popup__button"
+                        />
                     </form>
                 </div>
-            </section>
+            </div>
 
-            <section class="popup-img">
-                <div id="popupImg" class="popup-img__content">
-                    <div class="popup-img__container">
-                    <button 
-                    type="button"
-                    class="popup-img__close-button"></button>
-                    <img class="popup-img__image">
-                    <h2 class="popup-img__text"></h2>
-                    </div>
+            <div class="popup popup_type_add">
+                <div class="popup__container">
+                    <button type="button" aria-label="Close" class="button button_type_close"></button>
+                    <h3 class="popup__title">New place</h3>
+                    <form method="POST" name="popup_type_add" class="popup__form popup__form_type_add">
+                        <label>
+                            <input
+                            type="text"
+                            name="title"
+                            id="card-title"
+                            class="popup__input popup__input_type_title"
+                            placeholder="Title"
+                            required
+                            minlength="2"
+                            maxlength="30"
+                            />
+                            <span class="popup__error" id="card-title-error"></span>
+                        </label>
+                        <label>
+                            <input
+                            type="url"
+                            name="url"
+                            id="card-url"
+                            class="popup__input popup__input_type_image-url"
+                            placeholder="Image link"
+                            required
+                            />
+                            <span class="popup__error" id="card-url-error"></span>
+                        </label>
+                        <input
+                            type="submit"
+                            value="Save"
+                            class="button button_type_save popup__button"
+                        />
+                    </form>
                 </div>
-            </section>
+            </div>
 
+            <div class="popup popup_type_image">
+                <div class="popup__container popup__container_image">
+                    <button type="button" aria-label="Close" class="button button_type_close button_type_close"></button>
+                    <figure class="popup__figure">
+                        <img src=" " alt=" " class="popup__image" />
+                        <figcaption class="popup__caption"></figcaption>
+                    </figure>
+                </div>
+            </div>
 
-            <section id="holder" class="elements">
-                <template  id="template">
-                    <div class="element">
-                     <img onclick="popupImg"
-                        id="card"
-                        class="element__image" 
-                        src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg"/>
-                     <h2 id="nama" class="element__text">Lembah Yosemite</h2>
-                     <button 
-                        type="button" 
-                        class="element__like">
-                    </button>
-                     <button 
-                        type="button" 
-                        class="element__delete">
-                    </button> 
-                    </div>
-                </template>
-            </section>
+        </div>
 
-           
-  
-              
-            <footer class="footer">
-                <p class="footer__copyright">© 2023 Around The U.S.</p>
-            </footer>
-        </main>
-    </div>
-    <script src="./scripts/index.js"></script>
-    <script src="./scripts/validate.js"></script>
-</body>
+        <template class="card__template">
+            <li class="card">
+                <button type="button" class="button button_type_delete"></button>
+                <div class="card__image"></div>
+                <div class="card__info">
+                    <h2 class="card__title"></h2>
+                    <button type="button" aria-label="Like" class="button button_type_like"></button>
+                </div>
+            </li>
+        </template>
+
+        <script src="./scripts/validate.js"></script>
+        <script src="./scripts/script.js"></script>
+    </body>
 </html>
