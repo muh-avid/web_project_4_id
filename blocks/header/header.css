@@ -1,5 +1,7 @@
 @import url('./__logo/header__logo.css');
 
+@import url('./__title/header__title.css');
+
 .header {
   padding-top: 45px;
   margin: 0 auto;
