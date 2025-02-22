@@ -3,8 +3,8 @@
 
 const initialCards = [
   {
-      name: 'Yosemite Valley',
-      link: 'https://code.s3.yandex.net/web-code/yosemite.jpg',
+      name: 'Cousera Certificate',
+      link: 'https://drive.google.com/uc?export=view&id=1zLVBdoaGQZy-bEZqICVTIWUfJrB5m19u',
   },
   {
       name: 'Lake Louise',
