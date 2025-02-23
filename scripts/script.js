@@ -4,7 +4,7 @@
 const initialCards = [
   {
       name: 'Cousera Certificate',
-      link: 'https://drive.google.com/uc?export=view&id=1zLVBdoaGQZy-bEZqICVTIWUfJrB5m19u',
+      link: 'https://i.imgur.com/V635o1r.jpg',
   },
   {
       name: 'Lake Louise',
